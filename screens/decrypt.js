@@ -3,7 +3,7 @@ import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { styles } from '../component/styles.js';
 
-export default function App() {
+export const DecryptScreen = ({ navigation }) => {
 	return (
 		<View style={styles.container}>
 			<Text>Decrypt.js</Text>
