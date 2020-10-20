@@ -1,7 +1,7 @@
 import { NativeModules } from 'react-native';
 import { decode as atob, encode as btoa } from 'base-64';
 
-export class Utils {
+export class Crypto {
 	 static AES = NativeModules.Aes;
 
 	 static base64ToHex(str) {

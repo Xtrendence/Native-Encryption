@@ -39,6 +39,15 @@ const styles = StyleSheet.create({
 	sourceImage: {
 		width:72,
 		height:72,
+	},
+	backButton: {
+		position:'absolute',
+		bottom:10,
+		left:10
+	},
+	backImage: {
+		width:72,
+		height:72,
 	}
 });
 
