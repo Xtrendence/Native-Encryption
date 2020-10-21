@@ -21,6 +21,9 @@ export const EncryptScreen = ({ navigation }) => {
 				setOutput("Error..." + e);
 			}
 		}
+		else {
+			setOutput("Please fill out both input fields.");
+		}
 	}, [plaintext, password]);
 
 	function copy() {

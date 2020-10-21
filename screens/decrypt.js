@@ -24,6 +24,9 @@ export const DecryptScreen = ({ navigation }) => {
 				setOutput("Error... | " + e);
 			}
 		}
+		else {
+			setOutput("Please fill out both input fields.");
+		}
 	}, [cipher, password]);
 
 	function copy() {
