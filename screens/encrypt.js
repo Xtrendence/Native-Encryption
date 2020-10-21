@@ -10,11 +10,16 @@ export const EncryptScreen = ({ navigation }) => {
 	const [output, setOutput] = React.useState("Encrypted Output...");
 
 	const encrypt = React.useCallback(async () => {
-		if(plaintext && password) {
-			let salt = await Crypto.generateSalt(password);
-			let key = await Crypto.generateKey(password, salt, 5000, 256);
-			let encryptedData = await Crypto.encryptData(plaintext, key);
-			setOutput(salt + "$$" + encryptedData.iv + "$$" + encryptedData.cipher);
+		if(plaintext && password && plaintext.toString().trim() !== "" && password.toString().trim() !== "") {
+			try {
+				let salt = await Crypto.generateSalt(password);
+				let key = await Crypto.generateKey(password, salt, 5000, 256);
+				let encryptedData = await Crypto.encryptData(plaintext, key);
+				setOutput(salt + "$$" + encryptedData.iv + "$$" + encryptedData.cipher);
+			}
+			catch(e) {
+				setOutput("Error..." + e);
+			}
 		}
 	}, [plaintext, password]);
 

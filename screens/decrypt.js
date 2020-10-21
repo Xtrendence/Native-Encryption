@@ -10,14 +10,19 @@ export const DecryptScreen = ({ navigation }) => {
 	const [output, setOutput] = React.useState("Decrypted Output...");
 
 	const decrypt = React.useCallback(async () => {
-		if(cipher && password) {
-			let salt = cipher.split("$$")[0];
-			let iv = cipher.split("$$")[1];
-			let ciphertext = Crypto.hexToBase64(cipher.split("$$")[2]);
-			let key = await Crypto.generateKey(password, salt, 5000, 256);
-			let encryptedData = { cipher:ciphertext, iv:iv };
-			let decryptedData = await Crypto.decryptData(encryptedData, key);
-			setOutput(decryptedData);
+		if(cipher && password && cipher.toString().trim() !== "" && password.toString().trim() !== "") {
+			try {
+				let salt = cipher.split("$$")[0];
+				let iv = cipher.split("$$")[1];
+				let ciphertext = Crypto.hexToBase64(cipher.split("$$")[2]);
+				let key = await Crypto.generateKey(password, salt, 5000, 256);
+				let encryptedData = { cipher:ciphertext, iv:iv };
+				let decryptedData = await Crypto.decryptData(encryptedData, key);
+				setOutput(decryptedData);
+			}
+			catch(e) {
+				setOutput("Error... | " + e);
+			}
 		}
 	}, [cipher, password]);
 
