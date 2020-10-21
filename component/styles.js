@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
 	container: {
 		flex:1,
 		backgroundColor:'#282837',
@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 	bannerView: {
 		width:'100%',
 		position:'absolute',
-		top:50,
+		top:40,
 		left:0,
 	},
 	bannerText: {
@@ -81,5 +81,3 @@ const styles = StyleSheet.create({
 		textAlign:'center'
 	}
 });
-
-export { styles };
