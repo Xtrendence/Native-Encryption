@@ -7,7 +7,7 @@ import { Crypto } from '../utils/crypto';
 export const DecryptScreen = ({ navigation }) => {
 	const [cipher, setCipher] = React.useState();
 	const [password, setPassword] = React.useState();
-	const [output, setOutput] = React.useState();
+	const [output, setOutput] = React.useState("Decrypted Output...");
 
 	const decrypt = React.useCallback(async () => {
 		if(cipher && password) {
