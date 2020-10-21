@@ -48,6 +48,37 @@ const styles = StyleSheet.create({
 	backImage: {
 		width:72,
 		height:72,
+	},
+	textInput: {
+		backgroundColor:'#3c3c50',
+		padding:10,
+		width:220,
+		borderRadius:20,
+		color:'#ffffff',
+		fontSize:16,
+		marginBottom:20
+	},
+	textOutput: {
+		backgroundColor:'#3c3c50',
+		padding:10,
+		width:300,
+		borderRadius:20,
+		color:'#ffffff',
+		fontSize:14,
+		maxHeight:100
+	},
+	actionButton: {
+		backgroundColor:'#3c3c50',
+		padding:10,
+		width:120,
+		borderRadius:20,
+		marginBottom:20
+	},
+	actionText: {
+		fontSize:20,
+		fontWeight:'bold',
+		color:'#ffffff',
+		textAlign:'center'
 	}
 });
 
